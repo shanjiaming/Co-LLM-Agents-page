@@ -1,0 +1,841 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<!---
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+--->
+<script src="load-mathjax.js" async></script>
+
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+    body {
+        width: 980px;
+    }
+}
+
+
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #5364cc;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1 {
+    text-align: center;
+}
+h2,h3 {
+    text-align: left;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+h3 {
+    font-weight: 600;
+    margin: 16px 0px 4px 0px;
+}
+
+.paper-title {
+    padding: 1px 0px 1px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+
+.move-down {
+    margin-top:1.2cm;
+}
+
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+
+.author-row, .affil-row {
+    font-size: 26px;
+}
+
+.author-row-new { 
+    text-align: center; 
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 20px;
+    padding: 4px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 12px;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affiliatons {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 18px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+	text-align: left;
+}
+
+
+video {
+    display: block;
+    margin: auto;
+}
+
+
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 0 0 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.paper-btn-coming-soon {
+    position: relative; 
+    top: 0;
+    left: 0;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.center {
+  margin-left: 10.0%;
+  margin-right: 10.0%;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+
+.paper-btn-tapestry {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 200px;
+  font-weight: 600;
+}
+
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.venue {
+    font-size: 23px;
+}
+
+.topnav {
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.topnav div {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav img {
+    padding: 2px 0px;
+    width: 100%;
+    margin: 0.2em 0px 0.3em 0px;
+    vertical-align: middle;
+}
+
+pre {
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 620px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 50%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  text-align: center;
+  float: left;
+  width: 16.666%;
+  padding: 5px;
+}
+.column3 {
+  text-align: center;
+  float: left;
+  width: 33.333%;
+  padding: 5px;
+}
+.column4 {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.column5 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.column10 {
+  text-align: center;
+  float: left;
+  width: 10%;
+  padding: 5px;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
+
+.row-center {
+    margin: 16px 0px 16px 0px;
+    text-align: center;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+
+
+
+
+
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+
+
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column3 {
+    width: 100%;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="bootstrap-grid.css">
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title> Building Cooperative Embodied Agents Modularly with Large Language Models</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:description" content="Reduce, Reuse, Recycle: Compositional Generation with Energy-Based Diffusion Models and MCMC"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@du_yilun">
+        <meta name="twitter:title" content="Reduce, Reuse, Recycle: Compositional Generation with Energy-Based Diffusion Models and MCMC">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+    </head>
+
+ <body>
+
+<div class="container">
+    <div class="paper-title">
+    <h1> 
+        Building Cooperative Embodied Agents Modularly with Large Language Models
+    </div>
+
+    <div id="authors">
+        <center>
+            <div class="author-row-new">
+                <a>Hongxin Zhang<sup>*</sup></a>,
+                <a>Weihua Du<sup>*</sup></a>,
+                <a>Jiaming Shan<sup></sup></a>,
+                <a>Qinhong Zhou<sup></sup></a>,
+                <a>Yilun Du<sup></sup></a>,
+                <a>Joshua B. Tenenbaum<sup></sup></a>,
+                <a>Tianmin Shu<sup></sup></a>,
+                <a>Chuang Gan<sup></sup></a>,
+            </div>
+        </center>
+        <center>
+        <!-- <div class="affiliations"> -->
+            <!-- <span><sup>1</sup> MIT</span> -->
+            <!-- <span><sup>2</sup> Google Deepmind</span> -->
+            <!-- <span><sup>3</sup> Google Brain</span> -->
+            <!-- <span><sup>4</sup> INRIA</span><br/> -->
+        <!-- </div> -->
+
+        <div class="affil-row">
+            <div class="venue text-center"><b>ICML 2023 </b></div>
+        </div>
+
+        </center>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+            <a class="paper-btn" href="https://arxiv.org/abs/10000000000000.0000">
+                <span class="material-icons"> description </span> 
+                 Paper
+            </a>
+            <!-- <a class="paper-btn" href="https://colab.research.google.com/drive/1jvlzWMc6oo-TH1fYMl6hsOYfrcQj2rEs?usp=sharing">
+                <span class="material-icons"> code </span> 
+                 Colab
+            </a>
+            <a class="paper-btn-tapestry" href="https://colab.research.google.com/github/yilundu/reduce_reuse_recycle/blob/main/notebooks/image_tapestry.ipynb">
+                <span class="material-icons"> code </span> 
+                 Tapestry Colab
+            </a> -->
+            <a class="paper-btn" href="https://github.com/StigLidu/watch_and_help">
+                <span class="material-icons"> code </span>
+                Code
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <section id="teaser-image">
+        <center>
+            <!-- <figure>
+                <video class="centered" width="80%" autoplay loop muted playsinline class="video-background " >
+                    <source src="materials/teaser.m4v" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </figure> -->
+            <figure>
+                <a>
+                    <img width="80%" src="figure/teaser_v1.7.jpg"> 
+                </a>
+                <!-- <p class="caption">
+                    We aim to utilize Large Language Models to build cooperative embodied agents.
+                </p> <br> -->
+            </figure>
+        </center>
+    </section>
+
+    
+    <section id="abstract"/>
+        <hr>
+        <h2>Abstract</h2>
+        <div class="flex-row">
+            <p>
+                Large Language Models (LLMs) have demonstrated impressive planning abilities in single-agent embodied tasks across various domains. However, their capacity for planning and communication in multi-agent cooperation remains unclear, even though these are crucial skills for intelligent embodied agents. In this paper, we present a novel framework that utilizes LLMs for multi-agent cooperation and tests it in various embodied environments. Our framework enables embodied agents to plan, communicate, and cooperate with other embodied agents or humans to accomplish long-horizon tasks efficiently. We demonstrate that recent LLMs, such as GPT-4, can surpass strong planning-based methods and exhibit emergent effective communication using our framework without requiring fine-tuning or few-shot prompting. We also discover that LLM-based agents that communicate in natural language can earn more trust and cooperate more effectively with humans. Our research underscores the potential of LLMs for embodied AI and lays the foundation for future research in multi-agent cooperation.
+            </p>
+        </div>
+    </section>
+    <section id="Problem Setup"/>
+        <hr>
+        <h2>Problem Setup</h2>
+
+
+        <div class="flex-row">
+            <p> 
+                Our problem can be defined as a decentralized partially observable Markov decision process (Dec-POMDP) augmented with communication, which can be formalized by $(S, G, \{A_i\}, \{O_i\})$, where $n$ embodied intelligent agents take actions $a_i \in A_i$ to navigate, interact, and communicate in a partially-observable environment given the current step's observation $o_i \in O_i$ including the messages received for each agent $i$ to cooperate to solve a long-horizon task with a goal $g\in G$, normally consisting of several sub-goals $g_1, g_2, \cdots, g_m$. Real-life household activities are representatives of this kind of task, that require intelligent embodied agents to cooperate with other agents and humans through long-horizon planning and effective communication. 
+            </p>
+        </div>
+    </section> 
+       
+    <section id="Our Proposed Framework"/>
+        <hr>
+        <h2>Our Proposed Framework</h2>
+
+
+        <div class="flex-row">
+            <p> 
+                The overall modular framework consists of five modules: observation, belief, communication, reasoning, and planning. At each step, we first process the raw observation received with an <em>Observation Module</em>, then update the agent's inner belief of the scene and the other agents through a <em>Belief Module</em>, this belief is then used with the previous actions and dialogues to construct the prompt for the <em>Communication Module</em> and the <em>Reasoning Module</em> which utilizes Large Language Models to generate messages and decide on high-level plans. Finally, a <em>Planning Module</em> gives the primitive action to take in this step according to the high-level plan.
+            </p>
+        </div>
+
+        <figure>
+            <a>
+                <img width="100%" src="figure/framework_v4.jpg"> 
+            </a>
+            <p class="caption">
+                An overview of our framework, consisting of five modules: observation, belief, communication, reasoning, and planning, where the Communication Module and the Reasoning Module leverage Large Language Models to generate messages and decide on high-level plans.
+            </p> <br>
+        </figure>
+        </center>
+    </section>
+
+
+
+
+        
+
+    <section id="results">
+        <hr>
+        <h2>Experiments Setup</h2>  
+        <div class="flex-row">
+            <p>Communicative Watch-And-Help (C-WAH) is an embodied multi-agent cooperation benchmark, extended from the existing Watch-And-Help Challenge, where we focus more on cooperation ability. To achieve this, we support communication between agents and remove the Watch stage so both agents have common goals. The challenge is built on a realistic multi-agent simulation platform, VirtualHome-Social. We conduct experiments under both symbolic observations and ego-centric visual observations. The task is defined as five types of common household activities: <em>Prepare afternoon tea, Wash dishes, Prepare a meal, Put groceries</em>, and <em>Set up a dinner table</em>, and represented as various predicates with counts to be satisfied. The number of total goal objects is within 3 to 5.
+            </p>
+            <p>We extend the ThreeDWorld Transport Challenge into a multi-agent setting with more types of objects and containers, more realistic objects placements, and support communication between agents, named ThreeDWorld Multi-Agent Transport (TDW-MAT), built on top of the TDW platform, which is a general-purpose virtual world simulation platform. 
+                 In the new challenge, we use the latest <em>replicant</em> humanoid provided by the TDW platform as an embodiment. 
+                The agents are tasked to transport as many target objects as possible to the goal position with the help of containers as tools, without which the agent can transport only two objects at a time. The agents have the same ego-centric visual observation and action space as before with a new communication action added.
+                
+            </p>
+
+        </div> 
+        <h2>Video Demo</h2>
+        <div class="flex-container">
+          <div class="flex-item">
+            <figure>
+              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+                <source src="video/TDW_Video_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+          </div>
+          <div class="flex-item">
+            <figure>
+              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+                <source src="video/TDW_Video_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+          </div>
+          <div class="flex-item">
+            <figure>
+              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+                <source src="video/TDW_Video_3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+          </div>
+          <div class="flex-item">
+            <figure>
+              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+                <source src="video/video 2 resized6_22.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+          </div>
+        </div>
+        
+        <hr>
+        
+    <hr>
+
+        <h2>Examples</h2>  
+            <div class="flex-row">
+                <p>To better understand the essential factors for effective cooperation, we conduct
+                    a qualitative analysis of the agents’ behaviors exhibited in our experiments and identified several
+                    cooperative behaviors.
+				</p>
+            </div> 
+            <center>
+
+            <figure>
+                <a>
+                    <img width="100%" src="figure/case_arxiv.png"> 
+                </a>
+                <p class="caption">
+                    Example cooperative behaviors demonstrating our agents built with LLMs can communicate effectively and are good cooperators.
+                </p> <br>
+            </figure>
+            </center>
+
+        <hr>
+
+
+        <h2>Human Experiments Results</h2>  
+            <div class="flex-row">
+                <p>Humans are the most common if not the most important embodied agents for embodied agents to cooperate with. Therefore it's important to study if our proposed LLM agents can cooperate with humans well. We conducted human experiments on the Communicative Watch-And-Help where the agent Alice is controlled by real humans.
+</p>
+            </div> 
+
+            <center>
+            <figure>
+                <a>
+                    <img width="100%" src="figure/abc.png"> 
+                </a>
+                <p class="caption">
+                    (a) <b>Human experiments results</b> Average number of steps when collaborating with Humans and AI. (b) Subjective Rating Humans give when cooperating with different agents. Humans trust LLM agents who can communicate in natural language more and cooperate more efficiently with them. (c) <b>Ablation results</b> The Belief Module and a strong LLM for the Reasoning Module are important, while Communication Module matters more when cooperating with humans.
+                </p> <br>
+            </figure>
+            </center>
+
+        <hr>
+
+
+    </section> 
+
+
+
+
+    <!-- <section id="related_projects">
+        <hr>
+        <h2>Related Projects</h2>  
+
+          <br>
+          Check out a list of our related papers on compositional generation and energy based models. A full list can be found <a href="https://energy-based-model.github.io/Energy-based-Model-MIT/">here</a>!
+          <br>
+
+        <div class="row vspace-top">
+        <div class="col-sm-3">
+            <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                <source src="materials/related/teaser_glide.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-sm-9">
+          <div class="paper-title">
+            <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">Compositional Visual Generation with Composable Diffusion Models</a>
+        </div>
+        <div>
+            We present a method to compose different diffusion models together, drawing on the close connection of
+            diffusion models with EBMs. We illustrate how compositional operators enable
+            the ability to composing multiple sets of objects together as well as generate images subject to 
+            complex text prompts.
+        </div>
+        </div>
+        </div>
+
+        <div class="row vspace-top">
+        <div class="col-sm-3">
+            <div class="move-down">
+                <img src="materials/related/comp_cartoon.png" class="img-fluid" alt="comp_carton" style="width:100%">
+            </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="paper-title">
+            <a href="https://energy-based-model.github.io/compositional-generation-inference/">Compositional Visual Generation with Energy Based Models</a>
+        </div>
+        <div>
+            We present a set of compositional operators that enable EBMs to exhibit <b>zero-shot compositional</b> visual generation, enabling us to compose visual concepts
+            (through operators of conjunction, disjunction, or negation) together in a zero-shot manner.
+            Our approach enables us to generate faces given a  description
+            ((Smiling AND Female) OR (NOT Smiling AND Male)) or to combine several different objects together.
+        </div>
+        </div>
+        </div>
+
+
+        <div class="row vspace-top">
+        <div class="col-sm-3">
+            <video width="100%" playsinline="" autoplay="" loop="" preload="" muted="">
+                <source src="materials/related/half.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="col-sm-9">
+          <div class="paper-title">
+                        <a href="https://openai.com/blog/energy-based-models/">Implicit Generation and Generalization with Energy Based Models</a>
+        </div>
+                We introduce a method to scale EBM training to generate high resolution images.
+                We propose to utilize Langevin dynamics, initialized from random noise, to iteratively
+                refine and denoise image samples. We further demonstrate unique properties of EBMs
+                such as compositionality, continual learning, and robustness.
+        <div>
+        </div>
+        </div>
+
+    </section>  -->
+
+
+    <!-- <section id="paper">
+        <h2>Team</h2>        
+        <div class="row">
+            <div class="column5">
+                <a href='https://yilundu.github.io/'>
+                    <img  src=./materials/people/yilun3.png class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Yilun Du </p>
+                <p class=institution>MIT</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://yilundu.github.io/'>
+                    <img  src=./materials/people/conor.jpg class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Conor Durkan </p>
+                <p class=institution>Google Deepmind</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://yilundu.github.io/'>
+                    <img  src=./materials/people/robin.png class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Robin Strudel </p>
+                <p class=institution>INRIA</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://scholar.google.com/citations?user=rRJ9wTJMUB8C&hl=en'>
+                    <img  src=./materials/people/josh2.jpg class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Joshua Tenenbaum </p>
+                <p class=institution>MIT</p>
+            </div>
+
+            <div class="column5">
+                <a href="https://groups.csail.mit.edu/vision/torralbalab/">
+                    <img src=./materials/people/sander.png class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Sander Dieleman </p>
+                <p class=institution>Google Deepmind</p>
+            </div>
+         </div>
+
+        <div class="row">
+
+            <div class="column10">
+            </div>
+
+            <div class="column5">
+                <a href='https://yilundu.github.io/'>
+                    <img  src=./materials/people/rob.png class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Rob Fergus </p>
+                <p class=institution>Google Deepmind</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://yilundu.github.io/'>
+                    <img  src=./materials/people/jascha.png class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Jascha Sohl-Dickstein </p>
+                <p class=institution>Google Brain</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://yilundu.github.io/'>
+                    <img  src=./materials/people/arnaud.jpg class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Arnaud Doucet </p>
+                <p class=institution>Google Deepmind</p>
+            </div>
+
+            <div class="column5">
+                <a href='https://scholar.google.com/citations?user=rRJ9wTJMUB8C&hl=en'>
+                    <img  src=./materials/people/will.jpg class="figure-img img-fluid rounded-circle" height=200px width=200px>
+                </a>
+                <p class=profname> Will Grathwohl </p>
+                <p class=institution>Google Deepmind</p>
+            </div>
+
+         </div>
+    </section>
+    -->
+    <section>
+        This webpage template was recycled from <a href='https://nv-tlabs.github.io/LION/'>here</a>.
+        <center><p><a href='https://accessibility.mit.edu/'><b>Accessibility</b></a></p></center>
+    </section>
+    
+
+
+</div>
+</body>
+</html>
