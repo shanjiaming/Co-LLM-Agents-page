@@ -482,7 +482,7 @@ pre {
         <!-- </div> -->
 
         <div class="affil-row">
-            <div class="venue text-center"><b>ICML 2023 </b></div>
+            <div class="venue text-center"><b>NeurlIPS 2023 </b></div>
         </div>
 
         </center>
@@ -537,8 +537,48 @@ pre {
                 Large Language Models (LLMs) have demonstrated impressive planning abilities in single-agent embodied tasks across various domains. However, their capacity for planning and communication in multi-agent cooperation remains unclear, even though these are crucial skills for intelligent embodied agents. In this paper, we present a novel framework that utilizes LLMs for multi-agent cooperation and tests it in various embodied environments. Our framework enables embodied agents to plan, communicate, and cooperate with other embodied agents or humans to accomplish long-horizon tasks efficiently. We demonstrate that recent LLMs, such as GPT-4, can surpass strong planning-based methods and exhibit emergent effective communication using our framework without requiring fine-tuning or few-shot prompting. We also discover that LLM-based agents that communicate in natural language can earn more trust and cooperate more effectively with humans. Our research underscores the potential of LLMs for embodied AI and lays the foundation for future research in multi-agent cooperation.
             </p>
         </div>
+    </section>    
+    
+    <section id="Video Demo"/>
+    <hr>
+    <h2>Video Demo</h2>
+    <div class="flex-container">
+      <div class="flex-item">
+        <figure>
+          <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+            <source src="video/TDW_Video_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+      <div class="flex-item">
+        <figure>
+          <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+            <source src="video/TDW_Video_2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+      <div class="flex-item">
+        <figure>
+          <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+            <source src="video/TDW_Video_3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+      <div class="flex-item">
+        <figure>
+          <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+            <source src="video/video 2 resized6_22.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+    </div>
     </section>
-    <section id="Problem Setup"/>
+    
+    <!-- <section id="Problem Setup"/>
         <hr>
         <h2>Problem Setup</h2>
 
@@ -548,7 +588,7 @@ pre {
                 Our problem can be defined as a decentralized partially observable Markov decision process (Dec-POMDP) augmented with communication, which can be formalized by $(S, G, \{A_i\}, \{O_i\})$, where $n$ embodied intelligent agents take actions $a_i \in A_i$ to navigate, interact, and communicate in a partially-observable environment given the current step's observation $o_i \in O_i$ including the messages received for each agent $i$ to cooperate to solve a long-horizon task with a goal $g\in G$, normally consisting of several sub-goals $g_1, g_2, \cdots, g_m$. Real-life household activities are representatives of this kind of task, that require intelligent embodied agents to cooperate with other agents and humans through long-horizon planning and effective communication. 
             </p>
         </div>
-    </section> 
+    </section>  -->
        
     <section id="Our Proposed Framework"/>
         <hr>
@@ -579,7 +619,7 @@ pre {
 
     <section id="results">
         <hr>
-        <h2>Experiments Setup</h2>  
+        <!-- <h2>Experiments Setup</h2>  
         <div class="flex-row">
             <p>Communicative Watch-And-Help (C-WAH) is an embodied multi-agent cooperation benchmark, extended from the existing Watch-And-Help Challenge, where we focus more on cooperation ability. To achieve this, we support communication between agents and remove the Watch stage so both agents have common goals. The challenge is built on a realistic multi-agent simulation platform, VirtualHome-Social. We conduct experiments under both symbolic observations and ego-centric visual observations. The task is defined as five types of common household activities: <em>Prepare afternoon tea, Wash dishes, Prepare a meal, Put groceries</em>, and <em>Set up a dinner table</em>, and represented as various predicates with counts to be satisfied. The number of total goal objects is within 3 to 5.
             </p>
@@ -589,8 +629,8 @@ pre {
                 
             </p>
 
-        </div> 
-        <h2>Video Demo</h2>
+        </div>  -->
+        <!-- <h2>Video Demo</h2>
         <div class="flex-container">
           <div class="flex-item">
             <figure>
@@ -627,8 +667,8 @@ pre {
         </div>
         
         <hr>
-        
-    <hr>
+        <hr>
+    -->
 
         <h2>Examples</h2>  
             <div class="flex-row">
